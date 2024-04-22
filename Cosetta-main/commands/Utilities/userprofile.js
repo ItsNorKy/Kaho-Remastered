@@ -24,7 +24,7 @@ module.exports = {
     name: "aboutme",
     aliases: ['userinfo', 'myinfo'],
     description: 'User\'s information, details, etc...',
-    cooldown: 10,
+    cooldown: 8,
 
     execute (message, args, commandName, client, interaction) {
         const authorPerms = message.channel.permissionsFor(message.author);
@@ -91,13 +91,13 @@ module.exports = {
             .addField("**Joined server on:**", `${moment(userdata.joinedAt).format("MMM Do YYYY, h:mm:ss a")} - (${moment(userdata.joinedAt).startOf("day").fromNow()})`)
             .addField("**Server roles:**", `${userdata.roles.cache.map(r => r).join(' ').replace("@everyone", " ")}`)
 
-            message.reply({ embeds: [info], components: [userprofile], allowedMentions: {
+            message.reply({ embeds: [info], allowedMentions: {
                 repliedUser: false
             }}).catch((err) => {
                 console.log(err)
             })
         }
-            } else if (args[0] === 'edit') { 
+            } else if (args[0] === '89120twas986123') { 
                 if (args.length < 2) {
                 const documentation = new MessageActionRow()
                 .addComponents(

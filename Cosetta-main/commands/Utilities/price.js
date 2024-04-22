@@ -5,7 +5,7 @@ module.exports = {
     name: "price", 
     aliases: ['price'],
     description: "Sending in embed has never been easier.",
-    cooldown: 10,
+    cooldown: 1,
     execute (message, args, commandName, client, interaction) { 
         const authorPerms = message.channel.permissionsFor(message.author);
        if(!authorPerms.has('ADMINISTRATOR')) {
@@ -21,33 +21,6 @@ module.exports = {
                }, 9000);
            })
        } else {
-
-        if(args.length < 1) {
-            const Docs = new MessageActionRow()
-            .addComponents(
-                new MessageButton()
-                .setLabel('Documentation')
-                .setStyle('LINK')
-                .setURL('https://discord.gg/YZ38GjjPFg')
-            )
-
-            const invalidlength = new MessageEmbed()
-            .setColor('RED')
-            .setDescription('Invalid command usage, please check the documentation.')
-            
-            message.channel.send({
-                embeds: [invalidlength],
-                components: [Docs],
-                allowedMentions: {
-                    repliedUser: false
-                }
-            }).then((sent) => {
-                setTimeout(() => {
-                    sent.delete();
-                }, 9000)
-            })
-
-            } else {
                 if (message.deletable) message.delete();
                 const embed = new MessageEmbed()
                 .setColor('#FFE333')
@@ -57,11 +30,12 @@ module.exports = {
                 .addFields(
                     {name: `${champ} **Resurgence Champion Quest**`, value: '- ~~75$~~ 15$'},
                     {name: `${champ} **Battle Royale Champion Quest**`, value: '- ~~50$~~ 10$'},
-                    {name: `${champ} **Nuke Defuse**`, value: '- Not Available'},
+                    {name: `${champ} **Nuke Defuse**`, value: '- Not Available \n'},
+                    {name: `**Additional options**`, value: "- Self-play +10% \n- Priority Queue +5%"},
                 )
                 .setFooter('Last updated: 04/22/2024')
                 message.channel.send({ embeds: [embed] })
-            }
+            
            
 
         }

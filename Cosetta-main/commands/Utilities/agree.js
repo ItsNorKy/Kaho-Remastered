@@ -5,7 +5,7 @@ module.exports = {
     name: "agree", 
     aliases: ['agree'],
     description: "Sending in embed has never been easier.",
-    cooldown: 10,
+    cooldown: 1,
     execute (message, args, commandName, client, interaction) { 
         const authorPerms = message.channel.permissionsFor(message.author);
        if(!authorPerms.has('ADMINISTRATOR')) {

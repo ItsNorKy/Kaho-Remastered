@@ -17,7 +17,7 @@ array.forEach(handler => {
 
 require('dotenv').config()
 
-mongoose.connect('mongodb+srv://Cosetta:03112052@cluster0.qt9aa.mongodb.net/Data', {
+mongoose.connect('mongodb+srv://Aurora:03112052@cluster0.b9wwzve.mongodb.net/Data', {
      useNewUrlParser: true,
      useUnifiedTopology: true,
  }).then(() => {
