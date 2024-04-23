@@ -2,7 +2,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const { ButtonInteraction } = require('discord.js');
 const Discord = require('discord.js')
 const moment = require('moment')
-const Schema = require('../../models/profileSchema')
+const Schema = require('../models/profileSchema')
 var time = new Date,
 timeformat = [time.getMonth()+1,
     time.getDate(),
